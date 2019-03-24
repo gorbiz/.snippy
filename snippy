@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Based on "snippy" by "sessy" 
+# Based on "snippy" by "sessy"
 # (https://bbs.archlinux.org/viewtopic.php?id=71938)
 #
 # You will also need "dmenu", "xsel" and "xdotool". Get them from your linux
@@ -11,12 +11,12 @@
 #
 # 2. Create a file in that directory for each snippet that you want.
 #    The filename will be used as a menu item, so you might want to
-#    omit the file extension when you name the file. 
+#    omit the file extension when you name the file.
 #
-#    TIP: If you have a lot of snippets, you can organise them into 
+#    TIP: If you have a lot of snippets, you can organise them into
 #    subdirectories under ~/.snippy.
 #
-#    TIP: The contents of the file will be pasted asis, so if you 
+#    TIP: The contents of the file will be pasted asis, so if you
 #    don't want a newline at the end when the text is pasted, don't
 #    put one in the file.
 #
@@ -33,7 +33,7 @@ cd ${DIR}
 
 # Use the filenames in the snippy directory as menu entries.
 # Get the menu selection from the user.
-FILE=`find .  -type f -not -path '*/\.*' | sed 's!\.\/!!' | /usr/bin/dmenu ${DMENU_ARGS}`
+FILE=`find .  -type f -not -path '*/\.*' | grep -Ev 'README.md|snippy' | sed 's!\.\/!!' | /usr/bin/dmenu ${DMENU_ARGS}`
 
 if [ -f ${DIR}/${FILE} ]; then
   #save old content
