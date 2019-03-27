@@ -1,5 +1,5 @@
 ## Install
-Requires: `dmenu`
+Requires: `dmenu`, `xsel` & `xdotool` (@ arch: `sudo pacman -S dmenu xsel xdotool`)
 1. $ `git clone git@github.com:gorbiz/.snippy.git` <kbd>↵</kbd>
 2. Bind a key combination to `.snippy/.bin/snippy`.
 
